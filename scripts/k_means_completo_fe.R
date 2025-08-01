@@ -80,8 +80,7 @@ dependencia_tidy_clust_fe %>%
     TD_VEJ = mean(TDD_VEJEZ),
     TD_POT = mean(RA_POTENCIAL),
     TD_PAD = mean(RA_PADRES),
-  ) |> ggplot() +
-  geom_col(aes(x = CLUSTER_NAME, y = TD_JOV))
+  ) 
 
 
 
