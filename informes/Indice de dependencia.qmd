@@ -1,0 +1,24 @@
+---
+title: "Índice de Dependencia"  
+subtitle: "1. Nota Metodológica – Ministerio de la Mujer y Poblaciones Vulnerables – MIMP"
+author: 
+  - name: "Denis Rodríguez"
+    affiliation: "Analista Social, Dirección de Población - MIMP"
+    url: https://github.com/denis-yen
+format: html
+editor: visual
+---
+
+## Antecedentes
+
+Desde el 15 de marzo, la Dirección de Población de la Dirección General de Población, Desarrollo y Voluntariado – DGPDV, del Viceministerio de Poblaciones Vulnerables – VMPV, del Ministerio de la Mujer y Poblaciones Vulnerables – MIMP, ha iniciado un proceso sistemático de análisis y construcción de indicadores estratégicos vinculados a la dinámica demográfica y a la situación de las poblaciones vulnerables en el país. Esta iniciativa se enmarca en el fortalecimiento de la plataforma web [InfoPoblación](https://www.gob.pe/37197-ministerio-de-la-mujer-y-poblaciones-vulnerables-infopoblacion), concebida como un espacio de difusión de información estadística accesible, confiable y pertinente para la formulación de políticas públicas y la toma de decisiones basadas en evidencia a nivel regional y subnacional.
+
+El desarrollo del Índice de Dependencia en esta plataforma responde a los objetivos de la Línea de trabajo 3 “Gestión del conocimiento poblacional”, que busca generar conocimiento a través de estudios especializados y difundirlo en formatos estratégicos y accesibles. Esta acción se complementa con la Línea de trabajo 1 “Política Nacional de Población”, al brindar insumos que faciliten la implementación de los Programas Regionales de Población, promoviendo una adecuada planificación territorial basada en la estructura por edades de la población. Asimismo, contribuye a los objetivos de la Línea de trabajo 2 “Seguimiento a compromisos internacionales y nacionales”, al fortalecer el monitoreo de los avances en el cumplimiento del Programa de Acción de la Conferencia Internacional sobre la Población y el Desarrollo (CIPD) y del Consenso de Montevideo sobre Población y Desarrollo.
+
+En este marco, el Índice de Dependencia se incorpora como uno de los indicadores clave de InfoPoblación, permitiendo visualizar de manera sintética la presión demográfica sobre la población en edad activa, con especial énfasis en contextos de desigualdad y vulnerabilidad..
+
+## Construcción del Índice de Dependencia
+
+Resulta evidente que el indicador, por sí solo, no refleja de manera precisa la carga real de dependencia demográfica. Esto se debe a que no toda la población en el rango de 15 a 64 años se encuentra efectivamente insertada en el mercado laboral ni se halla ocupada. Del mismo modo, las personas mayores de 65 años no están completamente fuera del mercado de trabajo, ya que algunas continúan formando parte de la población económicamente activa (PEA).
+
+En materia de población, se utilizan otros indicadores para evidenciar el proceso de envejecimiento poblacional y su vínculo con una mayor carga de dependencia. Entre los más relevantes se encuentran el índice de envejecimiento, la razón de apoyo potencial y la razón de vejez, relación de apoyo a los padres
