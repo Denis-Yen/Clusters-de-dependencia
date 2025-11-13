@@ -9,16 +9,89 @@ format: html
 editor: visual
 ---
 
-## Antecedentes
+## Introducción
 
-Desde el 15 de marzo, la Dirección de Población de la Dirección General de Población, Desarrollo y Voluntariado – DGPDV, del Viceministerio de Poblaciones Vulnerables – VMPV, del Ministerio de la Mujer y Poblaciones Vulnerables – MIMP, ha iniciado un proceso sistemático de análisis y construcción de indicadores estratégicos vinculados a la dinámica demográfica y a la situación de las poblaciones vulnerables en el país. Esta iniciativa se enmarca en el fortalecimiento de la plataforma web [InfoPoblación](https://www.gob.pe/37197-ministerio-de-la-mujer-y-poblaciones-vulnerables-infopoblacion), concebida como un espacio de difusión de información estadística accesible, confiable y pertinente para la formulación de políticas públicas y la toma de decisiones basadas en evidencia a nivel regional y subnacional.
+La **Dirección de Población** de la **Dirección General de Población, Desarrollo y Voluntariado (DGPDV)**, del **Viceministerio de Poblaciones Vulnerables (VMPV)** del **Ministerio de la Mujer y Poblaciones Vulnerables (MIMP)**, ha iniciado un proceso sistemático de análisis y construcción de indicadores estratégicos vinculados a la dinámica demográfica y a la situación de las poblaciones vulnerables en el país. Esta iniciativa se enmarca en el fortalecimiento de la plataforma web **InfoPoblación**, concebida como un espacio de difusión de información estadística accesible, confiable y pertinente para la formulación de políticas públicas y la toma de decisiones basadas en evidencia a nivel regional y subnacional.
 
-El desarrollo del Índice de Dependencia en esta plataforma responde a los objetivos de la Línea de trabajo 3 “Gestión del conocimiento poblacional”, que busca generar conocimiento a través de estudios especializados y difundirlo en formatos estratégicos y accesibles. Esta acción se complementa con la Línea de trabajo 1 “Política Nacional de Población”, al brindar insumos que faciliten la implementación de los Programas Regionales de Población, promoviendo una adecuada planificación territorial basada en la estructura por edades de la población. Asimismo, contribuye a los objetivos de la Línea de trabajo 2 “Seguimiento a compromisos internacionales y nacionales”, al fortalecer el monitoreo de los avances en el cumplimiento del Programa de Acción de la Conferencia Internacional sobre la Población y el Desarrollo (CIPD) y del Consenso de Montevideo sobre Población y Desarrollo.
+La construcción de estos **perfiles demográficos a nivel distrital** responde a los objetivos de la *Línea de trabajo 3: Gestión del conocimiento poblacional*, que busca generar conocimiento a través de estudios especializados y difundirlo en formatos estratégicos y accesibles.
 
-En este marco, el Índice de Dependencia se incorpora como uno de los indicadores clave de InfoPoblación, permitiendo visualizar de manera sintética la presión demográfica sobre la población en edad activa, con especial énfasis en contextos de desigualdad y vulnerabilidad..
+Esta acción se complementa con la *Línea de trabajo 1: Política Nacional de Población*, al brindar insumos que faciliten la implementación de los Programas Regionales de Población, promoviendo una adecuada planificación territorial basada en la estructura por edades. Asimismo, contribuye a la *Línea de trabajo 2: Seguimiento a compromisos internacionales y nacionales*, al fortalecer el monitoreo del cumplimiento del **Programa de Acción de la CIPD** y del **Consenso de Montevideo sobre Población y Desarrollo**.
 
-## Construcción del Índice de Dependencia
+En este marco, se agregan estos perfiles demográficos distritales según **dependencia demográfica** en InfoPoblación, permitiendo visualizar de manera sintética la presión demográfica sobre la población en edad laboral. Esta herramienta facilita la identificación de territorios con mayores niveles de dependencia, orientando políticas públicas más focalizadas.
 
-Resulta evidente que el indicador, por sí solo, no refleja de manera precisa la carga real de dependencia demográfica. Esto se debe a que no toda la población en el rango de 15 a 64 años se encuentra efectivamente insertada en el mercado laboral ni se halla ocupada. Del mismo modo, las personas mayores de 65 años no están completamente fuera del mercado de trabajo, ya que algunas continúan formando parte de la población económicamente activa (PEA).
+## Construcción de perfile distritales según indicadores de dependencia demográfica
 
-En materia de población, se utilizan otros indicadores para evidenciar el proceso de envejecimiento poblacional y su vínculo con una mayor carga de dependencia. Entre los más relevantes se encuentran el índice de envejecimiento, la razón de apoyo potencial y la razón de vejez, relación de apoyo a los padres
+a razón de dependencia demográfica es un indicador comúnmente utilizado para medir la presión que ejerce la población dependiente (menores de 15 años, y las personas de 65 años y más) sobre la población en edad productiva (personas de 15 a 64 años). Sin embargo, este indicador presenta limitaciones importantes al momento de evaluar la carga real de dependencia, dado que solo considera dos grandes grupos etarios y no permite distinguir los subgrupos que los conforman, los cuales tienen características específicas.
+
+Por esta razón, para construir perfiles demográficos distritales más precisos sobre la dependencia demográfica, es necesario ir más allá de la relación tradicional de dependencia; y considerar variables que reflejen la dinámica de distintos grupos poblacionales, tales como las personas de 0 a 14 años, de 50 a 64 años, de 65 años y más, y de 80 años y más. En este contexto, se propone la creación de perfiles demográficos basados en indicadores que toman en cuenta estos grupos etarios, y aportan información sobre el proceso de envejecimiento y la carga de dependencia: la relación de dependencia juvenil, la relación de dependencia por vejez, la relación de apoyo potencial y la relación de apoyo a los padres.
+
+Estos indicadores no solo cuantifican la presión demográfica sobre los grupos en edad productiva, sino que también evidencian las necesidades específicas en términos de educación, salud, protección social y cuidados familiares. Por ejemplo, una alta relación de dependencia juvenil señala la necesidad de fortalecer servicios como educación y salud materno-infantil, mientras que una elevada relación de dependencia por vejez y una baja relación de apoyo potencial alertan sobre el aumento de la demanda en servicios geriátricos, pensiones, cuidados sociales y una sobrecarga alta sobre la población en edad de trabajar (15 a 64 años). Además, la relación de apoyo a los padres permite visibilizar el papel crucial de los adultos de 50 a 64 años como cuidadores principales, orientando la formulación de políticas de apoyo y bienestar social.
+
+En conjunto, estas variables facilitan la identificación de patrones demográficos y sociales diferenciados en cada distrito, permitiendo una planificación territorial más eficiente y la focalización adecuada de recursos para atender las diversas realidades demográficas.
+
+## Descripción de variables
+
+-   **Relación de dependencia juvenil**: Es el cociente entre el número de personas de 0 a 14 años de edad y las personas de 15 a 64 años. Este indicador mide cuántas personas menores de 15 años hay por cada 100 personas entre 15 y 64 años.
+
+$$
+RDD_{JOVE_i} = \frac{P_{0-14_i}}{P_{15-64_i}} \times 100
+$$
+
+**Donde:**
+
+$$(P\_{0-14_i}): \text{población de 0 a 14 años en el distrito i}$$
+
+$$(P\_{15-64_i}):\text {población de 15 a 64 años en el distrito i}$$
+
+-   **Relación de dependencia por vejez:** Es el cociente entre el número de personas de 65 años y más, y las personas de 15 a 64 años. Este indicador mide cuántas personas de 65 años y más hay por cada 100 personas entre 15 y 64 años.
+
+$$
+RDD_{VEJEZ_i} = \frac{P_{65+_i}}{P_{15-64_i}} \times 100
+$$
+
+$$
+(P_{65+_i}): \text{ población de 65 años y más en el distrito } i
+$$
+
+$$
+(P_{15-64_i}): \text{ población de 15 a 64 años en el distrito } i
+$$
+
+-   **Relación de apoyo potencial:** Es el cociente entre el número de personas de 15 a 64 años, y las personas de 65 años y más. Este indicador mide cuántas personas en edad de trabajar en el rango etario de 15 a 64 años podrán apoyar potencialmente a las personas de 65 años y más.
+
+$$
+RA_{POTENCIAL_i} = \frac{P_{15-64_i}}{P_{65+_i}}
+$$
+
+$$
+(P_{15-64_i}): \text{ población de 15 a 64 años}
+$$
+
+$$
+(P_{65+_i}): \text{ población de 65 años y más}
+$$
+
+- **Relación de apoyo a los padres:**  Es el cociente entre el número de personas de 80 años y más, y las personas de 50 a 64 años. Este indicador mide cuántas personas de 80 años y más hay por cada 100 personas de 50 a 64 años. Se basa en una lógica generacional, donde se interpreta que las personas mayores de 80 años tienen hijos en el rango etario de 50 a 64 años, y podrían asumir un rol activo en la prestación de cuidados (Prieto Rosas & Robello, 2023)
+
+$$
+RA_{PADRES_i} = \frac{P_{80+_i}}{P_{50-64_i}} \times 100
+$$
+
+$$
+(P_{80+_i}): \text{ población de 80 años y más}
+$$
+
+$$
+(P_{50-64_i}): \text{ población de 50 a 64 años}
+$$
+
+
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,6 +35,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="Indice de dependencia_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Indice de dependencia_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -77,16 +106,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="antecedentes" class="level2">
-<h2 class="anchored" data-anchor-id="antecedentes">Antecedentes</h2>
-<p>Desde el 15 de marzo, la Dirección de Población de la Dirección General de Población, Desarrollo y Voluntariado – DGPDV, del Viceministerio de Poblaciones Vulnerables – VMPV, del Ministerio de la Mujer y Poblaciones Vulnerables – MIMP, ha iniciado un proceso sistemático de análisis y construcción de indicadores estratégicos vinculados a la dinámica demográfica y a la situación de las poblaciones vulnerables en el país. Esta iniciativa se enmarca en el fortalecimiento de la plataforma web <a href="https://www.gob.pe/37197-ministerio-de-la-mujer-y-poblaciones-vulnerables-infopoblacion">InfoPoblación</a>, concebida como un espacio de difusión de información estadística accesible, confiable y pertinente para la formulación de políticas públicas y la toma de decisiones basadas en evidencia a nivel regional y subnacional.</p>
-<p>El desarrollo del Índice de Dependencia en esta plataforma responde a los objetivos de la Línea de trabajo 3 “Gestión del conocimiento poblacional”, que busca generar conocimiento a través de estudios especializados y difundirlo en formatos estratégicos y accesibles. Esta acción se complementa con la Línea de trabajo 1 “Política Nacional de Población”, al brindar insumos que faciliten la implementación de los Programas Regionales de Población, promoviendo una adecuada planificación territorial basada en la estructura por edades de la población. Asimismo, contribuye a los objetivos de la Línea de trabajo 2 “Seguimiento a compromisos internacionales y nacionales”, al fortalecer el monitoreo de los avances en el cumplimiento del Programa de Acción de la Conferencia Internacional sobre la Población y el Desarrollo (CIPD) y del Consenso de Montevideo sobre Población y Desarrollo.</p>
-<p>En este marco, el Índice de Dependencia se incorpora como uno de los indicadores clave de InfoPoblación, permitiendo visualizar de manera sintética la presión demográfica sobre la población en edad activa, con especial énfasis en contextos de desigualdad y vulnerabilidad..</p>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>La <strong>Dirección de Población</strong> de la <strong>Dirección General de Población, Desarrollo y Voluntariado (DGPDV)</strong>, del <strong>Viceministerio de Poblaciones Vulnerables (VMPV)</strong> del <strong>Ministerio de la Mujer y Poblaciones Vulnerables (MIMP)</strong>, ha iniciado un proceso sistemático de análisis y construcción de indicadores estratégicos vinculados a la dinámica demográfica y a la situación de las poblaciones vulnerables en el país. Esta iniciativa se enmarca en el fortalecimiento de la plataforma web <strong>InfoPoblación</strong>, concebida como un espacio de difusión de información estadística accesible, confiable y pertinente para la formulación de políticas públicas y la toma de decisiones basadas en evidencia a nivel regional y subnacional.</p>
+<p>La construcción de estos <strong>perfiles demográficos a nivel distrital</strong> responde a los objetivos de la <em>Línea de trabajo 3: Gestión del conocimiento poblacional</em>, que busca generar conocimiento a través de estudios especializados y difundirlo en formatos estratégicos y accesibles.</p>
+<p>Esta acción se complementa con la <em>Línea de trabajo 1: Política Nacional de Población</em>, al brindar insumos que faciliten la implementación de los Programas Regionales de Población, promoviendo una adecuada planificación territorial basada en la estructura por edades. Asimismo, contribuye a la <em>Línea de trabajo 2: Seguimiento a compromisos internacionales y nacionales</em>, al fortalecer el monitoreo del cumplimiento del <strong>Programa de Acción de la CIPD</strong> y del <strong>Consenso de Montevideo sobre Población y Desarrollo</strong>.</p>
+<p>En este marco, se agregan estos perfiles demográficos distritales según <strong>dependencia demográfica</strong> en InfoPoblación, permitiendo visualizar de manera sintética la presión demográfica sobre la población en edad laboral. Esta herramienta facilita la identificación de territorios con mayores niveles de dependencia, orientando políticas públicas más focalizadas.</p>
 </section>
-<section id="construcción-del-índice-de-dependencia" class="level2">
-<h2 class="anchored" data-anchor-id="construcción-del-índice-de-dependencia">Construcción del Índice de Dependencia</h2>
-<p>Resulta evidente que el indicador, por sí solo, no refleja de manera precisa la carga real de dependencia demográfica. Esto se debe a que no toda la población en el rango de 15 a 64 años se encuentra efectivamente insertada en el mercado laboral ni se halla ocupada. Del mismo modo, las personas mayores de 65 años no están completamente fuera del mercado de trabajo, ya que algunas continúan formando parte de la población económicamente activa (PEA).</p>
-<p>En materia de población, se utilizan otros indicadores para evidenciar el proceso de envejecimiento poblacional y su vínculo con una mayor carga de dependencia. Entre los más relevantes se encuentran el índice de envejecimiento, la razón de apoyo potencial y la razón de vejez, relación de apoyo a los padres</p>
+<section id="construcción-de-perfile-distritales-según-indicadores-de-dependencia-demográfica" class="level2">
+<h2 class="anchored" data-anchor-id="construcción-de-perfile-distritales-según-indicadores-de-dependencia-demográfica">Construcción de perfile distritales según indicadores de dependencia demográfica</h2>
+<p>a razón de dependencia demográfica es un indicador comúnmente utilizado para medir la presión que ejerce la población dependiente (menores de 15 años, y las personas de 65 años y más) sobre la población en edad productiva (personas de 15 a 64 años). Sin embargo, este indicador presenta limitaciones importantes al momento de evaluar la carga real de dependencia, dado que solo considera dos grandes grupos etarios y no permite distinguir los subgrupos que los conforman, los cuales tienen características específicas.</p>
+<p>Por esta razón, para construir perfiles demográficos distritales más precisos sobre la dependencia demográfica, es necesario ir más allá de la relación tradicional de dependencia; y considerar variables que reflejen la dinámica de distintos grupos poblacionales, tales como las personas de 0 a 14 años, de 50 a 64 años, de 65 años y más, y de 80 años y más. En este contexto, se propone la creación de perfiles demográficos basados en indicadores que toman en cuenta estos grupos etarios, y aportan información sobre el proceso de envejecimiento y la carga de dependencia: la relación de dependencia juvenil, la relación de dependencia por vejez, la relación de apoyo potencial y la relación de apoyo a los padres.</p>
+<p>Estos indicadores no solo cuantifican la presión demográfica sobre los grupos en edad productiva, sino que también evidencian las necesidades específicas en términos de educación, salud, protección social y cuidados familiares. Por ejemplo, una alta relación de dependencia juvenil señala la necesidad de fortalecer servicios como educación y salud materno-infantil, mientras que una elevada relación de dependencia por vejez y una baja relación de apoyo potencial alertan sobre el aumento de la demanda en servicios geriátricos, pensiones, cuidados sociales y una sobrecarga alta sobre la población en edad de trabajar (15 a 64 años). Además, la relación de apoyo a los padres permite visibilizar el papel crucial de los adultos de 50 a 64 años como cuidadores principales, orientando la formulación de políticas de apoyo y bienestar social.</p>
+<p>En conjunto, estas variables facilitan la identificación de patrones demográficos y sociales diferenciados en cada distrito, permitiendo una planificación territorial más eficiente y la focalización adecuada de recursos para atender las diversas realidades demográficas.</p>
+</section>
+<section id="descripción-de-variables" class="level2">
+<h2 class="anchored" data-anchor-id="descripción-de-variables">Descripción de variables</h2>
+<ul>
+<li><strong>Relación de dependencia juvenil</strong>: Es el cociente entre el número de personas de 0 a 14 años de edad y las personas de 15 a 64 años. Este indicador mide cuántas personas menores de 15 años hay por cada 100 personas entre 15 y 64 años.</li>
+</ul>
+<p><span class="math display">\[
+RDD_{JOVE_i} = \frac{P_{0-14_i}}{P_{15-64_i}} \times 100
+\]</span></p>
+<p><strong>Donde:</strong></p>
+<p><span class="math display">\[(P\_{0-14_i}): \text{población de 0 a 14 años en el distrito i}\]</span></p>
+<p><span class="math display">\[(P\_{15-64_i}):\text {población de 15 a 64 años en el distrito i}\]</span></p>
+<ul>
+<li><strong>Relación de dependencia por vejez:</strong> Es el cociente entre el número de personas de 65 años y más, y las personas de 15 a 64 años. Este indicador mide cuántas personas de 65 años y más hay por cada 100 personas entre 15 y 64 años.</li>
+</ul>
+<p><span class="math display">\[
+RDD_{VEJEZ_i} = \frac{P_{65+_i}}{P_{15-64_i}} \times 100
+\]</span></p>
+<p><span class="math display">\[
+(P_{65+_i}): \text{ población de 65 años y más en el distrito } i
+\]</span></p>
+<p><span class="math display">\[
+(P_{15-64_i}): \text{ población de 15 a 64 años en el distrito } i
+\]</span></p>
+<ul>
+<li><strong>Relación de apoyo potencial:</strong> Es el cociente entre el número de personas de 15 a 64 años, y las personas de 65 años y más. Este indicador mide cuántas personas en edad de trabajar en el rango etario de 15 a 64 años podrán apoyar potencialmente a las personas de 65 años y más.</li>
+</ul>
+<p><span class="math display">\[
+RA_{POTENCIAL_i} = \frac{P_{15-64_i}}{P_{65+_i}}
+\]</span></p>
+<p><span class="math display">\[
+(P_{15-64_i}): \text{ población de 15 a 64 años}
+\]</span></p>
+<p><span class="math display">\[
+(P_{65+_i}): \text{ población de 65 años y más}
+\]</span></p>
+<ul>
+<li><strong>Relación de apoyo a los padres:</strong> Es el cociente entre el número de personas de 80 años y más, y las personas de 50 a 64 años. Este indicador mide cuántas personas de 80 años y más hay por cada 100 personas de 50 a 64 años. Se basa en una lógica generacional, donde se interpreta que las personas mayores de 80 años tienen hijos en el rango etario de 50 a 64 años, y podrían asumir un rol activo en la prestación de cuidados (Prieto Rosas &amp; Robello, 2023)</li>
+</ul>
+<p><span class="math display">\[
+RA_{PADRES_i} = \frac{P_{80+_i}}{P_{50-64_i}} \times 100
+\]</span></p>
+<p><span class="math display">\[
+(P_{80+_i}): \text{ población de 80 años y más}
+\]</span></p>
+<p><span class="math display">\[
+(P_{50-64_i}): \text{ población de 50 a 64 años}
+\]</span></p>
 </section>
 
 </main>
