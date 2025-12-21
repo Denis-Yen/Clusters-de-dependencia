@@ -71,7 +71,7 @@ $$
 (P_{65+_i}): \text{ población de 65 años y más}
 $$
 
-- **Relación de apoyo a los padres:**  Es el cociente entre el número de personas de 80 años y más, y las personas de 50 a 64 años. Este indicador mide cuántas personas de 80 años y más hay por cada 100 personas de 50 a 64 años. Se basa en una lógica generacional, donde se interpreta que las personas mayores de 80 años tienen hijos en el rango etario de 50 a 64 años, y podrían asumir un rol activo en la prestación de cuidados (Prieto Rosas & Robello, 2023)
+-   **Relación de apoyo a los padres:** Es el cociente entre el número de personas de 80 años y más, y las personas de 50 a 64 años. Este indicador mide cuántas personas de 80 años y más hay por cada 100 personas de 50 a 64 años. Se basa en una lógica generacional, donde se interpreta que las personas mayores de 80 años tienen hijos en el rango etario de 50 a 64 años, y podrían asumir un rol activo en la prestación de cuidados (Prieto Rosas & Robello, 2023)
 
 $$
 RA_{PADRES_i} = \frac{P_{80+_i}}{P_{50-64_i}} \times 100
@@ -85,6 +85,28 @@ $$
 (P_{50-64_i}): \text{ población de 50 a 64 años}
 $$
 
+## Metodología
+### Método k-means
+El método de K-means, también conocido como el algoritmo de clustering de K-means, es un método de agrupación no jerárquico, el número de agrupaciones o clústeres (k) es previamente determinado, que asigna a cada observación en uno de los k clústeres (James, Witten, Hastie y Tibshirani, 2017, pp. 386).Las observaciones dentro de cada clúster son lo más similares posibles entre sí. Este método agrupará los distritos en k clústeres según las variables de dependencia (relación de dependencia juvenil y por vejez, y relación de apoyo potencial y a los padres). Matemáticamente, es un proceso iterativo que busca encontrar k clusters que minimice la varianza en cada cluster (Hartigan y Wong, 1979). Es decir, busca minimizar la suma de las distancias cuadráticas entre los puntos de cada observación y sus centroides de clúster.  
+
+Primero, se calcula la distancia euclidiana de cada punto $x_i$ a cada centroide $u_k$:
+
+$$
+d(x_i, \mu_k) = \sqrt{\sum_{j=1}^{d} \left(x_{ij} - \mu_{kj}\right)^2}
+$$
+donde: 
+
+$j:$ Variable de dependencia (relación de dependencia juvenil, relación de dependencia por vejez, relación de apoyo potencial y relación de apoyo a los padres).
+
+$x_i:$ Vector de variables del distrito $i.$
+
+$u_k:$ centroide (vector promedio) del cluster $k.$
+
+$x_{ij}:$ valor de la variable j para el distrito $i.$
+
+$u_{uk}:$ Valor de la variable $j$ para el distrito $i.$ 
+
+Se calcula esa distancia apara cada cluster $k = 1,2,...,K.$ y se asigna el punto $x_i$ al cluster $C_k$ cuyo centroide está más cerca. Luego, se recalculan los centroides de cada cluster, mediante el promedio de todas las coordenadas de los puntos en cada cluster para obtener el nuevo centroide $u_k:$
 
 
 
