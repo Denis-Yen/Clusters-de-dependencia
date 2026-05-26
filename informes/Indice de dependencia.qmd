@@ -91,8 +91,7 @@ $$
 
 El método de K-means, también conocido como el algoritmo de clustering de K-means, es un método de agrupación no jerárquico, el número de agrupaciones o clústeres (k) es previamente determinado, que asigna a cada observación en uno de los k clústeres (James, Witten, Hastie y Tibshirani, 2017, pp. 386). Las observaciones dentro de cada clúster son lo más similares posibles entre sí. Este método agrupará los distritos en k clústeres según las variables de dependencia (relación de dependencia juvenil y por vejez, y relación de apoyo potencial y a los padres). Matemáticamente, es un proceso iterativo que busca encontrar k clusters que minimice la varianza en cada cluster (Hartigan y Wong, 1979). Es decir, busca minimizar la suma de las distancias cuadráticas entre los puntos de cada observación y sus centroides de clúster.
 
-Primero, se calcula la distancia euclidiana de cada punto $(x_i)$ a cada centroide $(u_k):$ 
-$$
+Primero, se calcula la distancia euclidiana de cada punto $(x_i)$ a cada centroide $(u_k):$ $$
 d(x_i, \mu_k) = \sqrt{\sum_{j=1}^{d}(x_{ij} - \mu_{kj})^2}
 $$
 
@@ -119,4 +118,16 @@ Donde:
 -   $n_k$: número de puntos asignados al clúster $k$.
 -   $C_k$: conjunto de distritos asignados al clúster $k$.
 
-Se repiten los pasos de asignación y recalculación hasta que los centroides no cambien significativamente entre iteraciones, las asignaciones de puntos de clústeres se estabilicen o se alcance un número máximo de iteraciones. Con estos nuevos centroides, se evalúa la calidad del agrupamiento con la función objetivo $J$.
+Se repiten los pasos de asignación y recalculación hasta que los centroides no cambien significativamente entre iteraciones, las asignaciones de puntos de clústeres se estabilicen o se alcance un número máximo de iteraciones. Con estos nuevos centroides, se evalúa la calidad del agrupamiento con la función objetivo $J$. $$
+J = \sum_{k=1}^{K} \sum_{i \in C_k} \left\| x_i - \mu_k \right\|^2
+$$
+
+### Método del codo (*elbow method*)
+
+El método del codo es un método directo que determina el número óptimo de clústeres, $k^*$, considerando que debe alcanzarse una baja variación total o inercia dentro de los clústeres, con el objetivo de encontrar un equilibrio entre la inercia y la cantidad de clústeres (Medium, 2019). Es decir, busca el punto donde añadir más clústeres no mejora significativamente la reducción de la suma de las distancias cuadradas intra-clúster. Para ello, primero se calcula la distorsión.
+
+$$
+\text{Distorsión} = \frac{\sum_{i=1}^{n_k} \left\| x_i - \mu_k \right\|^2}{n_k}
+$$
+
+La distorsión mide la compacidad de los clústeres: cuanto más baja sea la distorsión, los puntos estarán más próximos a sus centroides, lo que indica una mejor agrupación.
