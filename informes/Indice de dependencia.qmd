@@ -71,7 +71,7 @@ $$
 (P_{65+_i}): \text{ población de 65 años y más}
 $$
 
-- **Relación de apoyo a los padres:**  Es el cociente entre el número de personas de 80 años y más, y las personas de 50 a 64 años. Este indicador mide cuántas personas de 80 años y más hay por cada 100 personas de 50 a 64 años. Se basa en una lógica generacional, donde se interpreta que las personas mayores de 80 años tienen hijos en el rango etario de 50 a 64 años, y podrían asumir un rol activo en la prestación de cuidados (Prieto Rosas & Robello, 2023)
+-   **Relación de apoyo a los padres:** Es el cociente entre el número de personas de 80 años y más, y las personas de 50 a 64 años. Este indicador mide cuántas personas de 80 años y más hay por cada 100 personas de 50 a 64 años. Se basa en una lógica generacional, donde se interpreta que las personas mayores de 80 años tienen hijos en el rango etario de 50 a 64 años, y podrían asumir un rol activo en la prestación de cuidados (Prieto Rosas & Robello, 2023)
 
 $$
 RA_{PADRES_i} = \frac{P_{80+_i}}{P_{50-64_i}} \times 100
@@ -85,13 +85,8 @@ $$
 (P_{50-64_i}): \text{ población de 50 a 64 años}
 $$
 
+## Metodología
 
+### Método k-means
 
-
-
-
-
-
-
-
-
+El método de K-means, también conocido como el algoritmo de clustering de K-means, es un método de agrupación no jerárquico, el número de agrupaciones o clústeres (k) es previamente determinado, que asigna a cada observación en uno de los k clústeres (James, Witten, Hastie y Tibshirani, 2017, pp. 386). Las observaciones dentro de cada clúster son lo más similares posibles entre sí. Este método agrupará los distritos en k clústeres según las variables de dependencia (relación de dependencia juvenil y por vejez, y relación de apoyo potencial y a los padres). Matemáticamente, es un proceso iterativo que busca encontrar k clusters que minimice la varianza en cada cluster (Hartigan y Wong, 1979). Es decir, busca minimizar la suma de las distancias cuadráticas entre los puntos de cada observación y sus centroides de clúster.
