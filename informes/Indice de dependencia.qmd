@@ -90,3 +90,33 @@ $$
 ### Método k-means
 
 El método de K-means, también conocido como el algoritmo de clustering de K-means, es un método de agrupación no jerárquico, el número de agrupaciones o clústeres (k) es previamente determinado, que asigna a cada observación en uno de los k clústeres (James, Witten, Hastie y Tibshirani, 2017, pp. 386). Las observaciones dentro de cada clúster son lo más similares posibles entre sí. Este método agrupará los distritos en k clústeres según las variables de dependencia (relación de dependencia juvenil y por vejez, y relación de apoyo potencial y a los padres). Matemáticamente, es un proceso iterativo que busca encontrar k clusters que minimice la varianza en cada cluster (Hartigan y Wong, 1979). Es decir, busca minimizar la suma de las distancias cuadráticas entre los puntos de cada observación y sus centroides de clúster.
+
+Primero, se calcula la distancia euclidiana de cada punto $(x_i)$ a cada centroide $(u_k):$ 
+$$
+d(x_i, \mu_k) = \sqrt{\sum_{j=1}^{d}(x_{ij} - \mu_{kj})^2}
+$$
+
+Donde:
+
+-   $j$: variable de dependencia (relación de dependencia juvenil, relación de dependencia por vejez, relación de apoyo potencial y relación de apoyo a los padres).
+-   $x_i$: vector de variables del distrito $i$.
+-   $\mu_k$: centroide (vector promedio) del clúster $k$.
+-   $x_{ij}$: valor de la variable $j$ para el distrito $i$.
+-   $\mu_{kj}$: valor de la variable $j$ del centroide del clúster $k$.
+
+Se calcula esa distancia para cada clúster $k = 1, 2, \ldots, K$. Luego, se asigna el punto $x_i$ al clúster $C_k$ cuyo centroide está más cercano.
+
+Posteriormente, se recalculan los centroides de cada clúster mediante el promedio de todas las coordenadas de los puntos asignados:
+
+$$
+\mu_k =
+\frac{1}{n_k}
+\sum_{i \in C_k} x_i
+$$
+
+Donde:
+
+-   $n_k$: número de puntos asignados al clúster $k$.
+-   $C_k$: conjunto de distritos asignados al clúster $k$.
+
+Se repiten los pasos de asignación y recalculación hasta que los centroides no cambien significativamente entre iteraciones, las asignaciones de puntos de clústeres se estabilicen o se alcance un número máximo de iteraciones. Con estos nuevos centroides, se evalúa la calidad del agrupamiento con la función objetivo $J$.

@@ -173,6 +173,30 @@ RA_{PADRES_i} = \frac{P_{80+_i}}{P_{50-64_i}} \times 100
 <section id="método-k-means" class="level3">
 <h3 class="anchored" data-anchor-id="método-k-means">Método k-means</h3>
 <p>El método de K-means, también conocido como el algoritmo de clustering de K-means, es un método de agrupación no jerárquico, el número de agrupaciones o clústeres (k) es previamente determinado, que asigna a cada observación en uno de los k clústeres (James, Witten, Hastie y Tibshirani, 2017, pp.&nbsp;386). Las observaciones dentro de cada clúster son lo más similares posibles entre sí. Este método agrupará los distritos en k clústeres según las variables de dependencia (relación de dependencia juvenil y por vejez, y relación de apoyo potencial y a los padres). Matemáticamente, es un proceso iterativo que busca encontrar k clusters que minimice la varianza en cada cluster (Hartigan y Wong, 1979). Es decir, busca minimizar la suma de las distancias cuadráticas entre los puntos de cada observación y sus centroides de clúster.</p>
+<p>Primero, se calcula la distancia euclidiana de cada punto <span class="math inline">\((x_i)\)</span> a cada centroide <span class="math inline">\((u_k):\)</span> <span class="math display">\[
+d(x_i, \mu_k) = \sqrt{\sum_{j=1}^{d}(x_{ij} - \mu_{kj})^2}
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(j\)</span>: variable de dependencia (relación de dependencia juvenil, relación de dependencia por vejez, relación de apoyo potencial y relación de apoyo a los padres).</li>
+<li><span class="math inline">\(x_i\)</span>: vector de variables del distrito <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(\mu_k\)</span>: centroide (vector promedio) del clúster <span class="math inline">\(k\)</span>.</li>
+<li><span class="math inline">\(x_{ij}\)</span>: valor de la variable <span class="math inline">\(j\)</span> para el distrito <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(\mu_{kj}\)</span>: valor de la variable <span class="math inline">\(j\)</span> del centroide del clúster <span class="math inline">\(k\)</span>.</li>
+</ul>
+<p>Se calcula esa distancia para cada clúster <span class="math inline">\(k = 1, 2, \ldots, K\)</span>. Luego, se asigna el punto <span class="math inline">\(x_i\)</span> al clúster <span class="math inline">\(C_k\)</span> cuyo centroide está más cercano.</p>
+<p>Posteriormente, se recalculan los centroides de cada clúster mediante el promedio de todas las coordenadas de los puntos asignados:</p>
+<p><span class="math display">\[
+\mu_k =
+\frac{1}{n_k}
+\sum_{i \in C_k} x_i
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(n_k\)</span>: número de puntos asignados al clúster <span class="math inline">\(k\)</span>.</li>
+<li><span class="math inline">\(C_k\)</span>: conjunto de distritos asignados al clúster <span class="math inline">\(k\)</span>.</li>
+</ul>
+<p>Se repiten los pasos de asignación y recalculación hasta que los centroides no cambien significativamente entre iteraciones, las asignaciones de puntos de clústeres se estabilicen o se alcance un número máximo de iteraciones. Con estos nuevos centroides, se evalúa la calidad del agrupamiento con la función objetivo <span class="math inline">\(J\)</span></p>
 </section>
 </section>
 
