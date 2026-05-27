@@ -131,3 +131,63 @@ $$
 $$
 
 La distorsión mide la compacidad de los clústeres: cuanto más baja sea la distorsión, los puntos estarán más próximos a sus centroides, lo que indica una mejor agrupación.
+
+### Método Gap Statistics
+
+El método *Gap Statistic* o método de brecha es una prueba estadística que compara la variabilidad interna de los clústeres observados con la variabilidad esperada en una distribución nula (sin estructura de agrupamiento) (Tibshirani, Walther y Hastie, 2001). El número óptimo de clústeres será aquel que maximice esta brecha, donde la estructura de los datos es más pronunciada y menos atribuible al azar. Esto indica que el agrupamiento observado es más significativo y no producto de fluctuaciones aleatorias.
+
+La estadística Gap se define como:
+
+$$
+Gap(k)=\frac{1}{B}\sum_{b=1}^{B} W_k^b - W_k
+$$
+
+Donde:
+
+-   $W_k$: suma de los errores cuadrados dentro del clúster $k$.
+-   $W_k^b$: suma de los errores cuadrados dentro del clúster $k$ para los datos de referencia.
+-   $B$: número de conjuntos de datos de referencia.
+
+Y el número óptimo de clústeres se elige como el valor más pequeño de $k$ que cumple la siguiente condición:
+
+$$
+Gap(k)\geq Gap(k+1)-SE(k+1)
+$$
+
+Donde:
+
+-   $SE(k+1)$: error estándar del estadístico Gap para $k+1$ clústeres.
+
+## Base de datos
+
+Se utilizó información poblacional proveniente del Repositorio Único Nacional de Información en Salud del Ministerio de Salud del Perú (MINSA) correspondiente al año 2025. La base de datos empleada contiene información de los 1891 distritos del país e incluye las siguientes variables:
+
+### Tabla 1.
+
+**Descripción de variables**
+
+| Variable       | Descripción                                           |
+|----------------|-------------------------------------------------------|
+| `UBIGEO`       | Código de Ubicación Geográfica de 6 dígitos           |
+| `PROVINCIA`    | Nombre de la provincia a la que pertenece el distrito |
+| `DISTRITO`     | Nombre del distrito                                   |
+| `RDD_JOVE`     | Relación de dependencia juvenil                       |
+| `RDD_VEJEZ`    | Relación de dependencia por vejez                     |
+| `RA_POTENCIAL` | Relación de apoyo potencial                           |
+| `RA_PADRES`    | Relación de apoyo a los padres                        |
+
+Las variables numéricas fueron estandarizadas ($\mu = 0$ y $\sigma = 1$), debido a que cuando las variables presentan rangos o unidades de medida diferentes, algunas pueden dominar el cálculo de la distancia euclidiana utilizada por el algoritmo de agrupamiento *K-means*. La estandarización permite que todas las variables se encuentren en una escala comparable, asegurando que cada una contribuya de manera equilibrada al análisis y evitando que alguna tenga una influencia desproporcionada en la formación de los clústeres.
+
+Puede acceder a la base de datos [aquí](www.infopoblación.gob.pe)
+
+## Proceso del análisis del método de *K-means clustering*
+
+Para determinar el número óptimo de clústeres ($k$), primero se realizó un análisis de componentes principales (*Principal Component Analysis* - PCA). En el Gráfico 1 se observa que la dimensión 1 explica el 74.4% de la variabilidad total, mientras que la dimensión 2 explica el 16.9%. En conjunto, ambas dimensiones explican el 91.3% de la variabilidad total de los datos.
+
+A partir de este análisis se identificaron cinco clústeres. Los clústeres 1 y 5 presentan una mayor dispersión, lo que indica una mayor heterogeneidad interna entre los distritos que los conforman. Por el contrario, los clústeres 2, 3 y 4 muestran una estructura más compacta, evidenciando una mayor similitud entre los distritos pertenecientes a cada grupo.
+
+![MIMP - Dirección de Población](images/grafico%201.png){fig-align="center" width="550"}
+
+Luego, se aplicó el método del codo. En el Gráfico 2., se muestra una caída significativa en la variabilidad entre 1 y 3 clústeres, pero no se identifica un “codo” claramente definido, dado que sugiere entre 3 y 5 clústeres.
+
+![MIMP - Dirección de Población](images/grafico 2.png){fig-align="center"}
