@@ -32,7 +32,10 @@ dependencia_tidy <- dependencia %>%
     across(where(is.numeric), ~ as.numeric(scale(.)))
   )
 
-
+dependencia_clust <- kmeans(select(dependencia_tidy, -c("UBIGEO", "REGION", "PROVINCIA", "DISTRITO")),
+                            centers = 5
+                            )
+summary(dependencia_clust)
 
 # 4. ELEGIR EL NÚMERO DE CLUSTERS -----------------------------------------
 

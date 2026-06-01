@@ -190,4 +190,8 @@ A partir de este análisis se identificaron cinco clústeres. Los clústeres 1 y
 
 Luego, se aplicó el método del codo. En el Gráfico 2., se muestra una caída significativa en la variabilidad entre 1 y 3 clústeres, pero no se identifica un “codo” claramente definido, dado que sugiere entre 3 y 5 clústeres.
 
-![MIMP - Dirección de Población](images/grafico 2.png){fig-align="center"}
+![MIMP - Dirección de Población](images/grafico%202.png){fig-align="center"}
+
+Por ello, se procede a realizar el método de *Gap Statistics*. En el Gráfico 3 se observa que la brecha alcanza un máximo cercano en $k = 5$ y luego se estabiliza, indicando que este es el número óptimo de clústeres. Esta técnica complementa y confirma la selección de $k^* = 5$, apoyando una agrupación que balancea adecuadamente la homogeneidad interna y la heterogeneidad entre grupos.
+
+![](images/Grafico 3.png)
