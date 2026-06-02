@@ -8,7 +8,7 @@
 
 <meta name="author" content="Denis Rodríguez">
 
-<title>Índice de Dependencia</title>
+<title>CLÚSTERS DE DEPENDENCIA DEMOGRÁFICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Índice de Dependencia</h1>
+<h1 class="title">CLÚSTERS DE DEPENDENCIA DEMOGRÁFICA</h1>
 <p class="subtitle lead">1. Nota Metodológica – Ministerio de la Mujer y Poblaciones Vulnerables – MIMP</p>
 </div>
 
@@ -301,7 +301,267 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 </figure>
 </div>
 <p>Por ello, se procede a realizar el método de <em>Gap Statistics</em>. En el Gráfico 3 se observa que la brecha alcanza un máximo cercano en <span class="math inline">\(k = 5\)</span> y luego se estabiliza, indicando que este es el número óptimo de clústeres. Esta técnica complementa y confirma la selección de <span class="math inline">\(k^* = 5\)</span>, apoyando una agrupación que balancea adecuadamente la homogeneidad interna y la heterogeneidad entre grupos.</p>
-<p><img src="images/Grafico%203.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Grafico%203-01.png" class="img-fluid figure-img"></p>
+<figcaption>MIMP - Dirección de Población</figcaption>
+</figure>
+</div>
+<p>Finalmente, se aplicó el método de <strong>K-means</strong> con (k = 5). El <strong>Gráfico 4</strong> muestra, a diferencia del <strong>Gráfico 1</strong>, una separación más clara entre los clústeres. Se observa que los clústeres 1, 2 y 3 presentan una mayor compacidad, mientras que los clústeres 4 y 5 exhiben una mayor dispersión, lo que sugiere una mayor heterogeneidad intra-clúster.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Grafico%204-01.png" class="img-fluid figure-img"></p>
+<figcaption>MIMP - Dirección de Población</figcaption>
+</figure>
+</div>
+</section>
+<section id="sintaxis-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="sintaxis-en-r">Sintaxis en R</h2>
+<p>Puede acceder al script de <strong>R</strong> utilizado para replicar el análisis de clústeres en el siguiente repositorio: <a href="https://github.com/Denis-Yen/Clusters-de-dependencia/blob/master/scripts/k_means_completo_fe.R">Script completo de K-means</a></p>
+</section>
+<section id="resultados-perfiles-demográficos-distritales-según-dependencia-demográfica" class="level1">
+<h1>8. Resultados: perfiles demográficos distritales según dependencia demográfica</h1>
+<p>El análisis de clústeres mediante la metodología <em>K-means</em> permitió identificar cinco perfiles demográficos (clústeres) que agrupan a los 1891 distritos en función de sus características relacionadas con los indicadores de dependencia: relación de dependencia juvenil (RDD_JOVE), relación de dependencia por vejez (RDD_VEJEZ), relación de apoyo potencial (RA_POTENCIAL) y relación de apoyo a los padres (RA_PADRES). A continuación, se describen los principales resultados obtenidos para cada clúster.</p>
+<section id="clúster-1" class="level3">
+<h3 class="anchored" data-anchor-id="clúster-1">Clúster 1</h3>
+<p>Este clúster agrupa distritos con baja carga juvenil (RDD_JOVE = -0.603) y una carga moderadamente alta por vejez (RDD_VEJEZ = 0.715). Asimismo, presenta una baja relación de apoyo potencial (RA_POTENCIAL = -0.854), indicando una menor cantidad de personas en edad laboral por cada adulto mayor. Además, registra una alta relación de apoyo a los padres (RA_PADRES = 0.663), lo que refleja una mayor presencia de personas de 80 años y más por cada adulto de entre 50 y 64 años.</p>
+</section>
+<section id="clúster-2" class="level3">
+<h3 class="anchored" data-anchor-id="clúster-2">Clúster 2</h3>
+<p>Este perfil muestra una moderada carga juvenil (RDD_JOVE = 0.674) y una baja carga por vejez (RDD_VEJEZ = -0.845). Asimismo, destaca por una elevada relación de apoyo potencial (RA_POTENCIAL = 1.122) y una baja relación de apoyo a los padres (RA_PADRES = -0.814), lo que implica un sólido soporte de población en edad laboral.</p>
+</section>
+<section id="clúster-3" class="level3">
+<h3 class="anchored" data-anchor-id="clúster-3">Clúster 3</h3>
+<p>Este clúster se caracteriza por presentar un perfil demográfico equilibrado. Tanto la relación de dependencia juvenil (RDD_JOVE = -0.066) como la relación de dependencia por vejez (RDD_VEJEZ = -0.267) se encuentran en niveles moderados. Del mismo modo, la relación de apoyo potencial (RA_POTENCIAL = -0.075) y la relación de apoyo a los padres (RA_PADRES = -0.242) muestran valores cercanos al promedio. En consecuencia, este perfil no presenta presiones demográficas extremas asociadas a ningún grupo etario.</p>
+</section>
+<section id="clúster-4" class="level3">
+<h3 class="anchored" data-anchor-id="clúster-4">Clúster 4</h3>
+<p>Este perfil demográfico se caracteriza por tener una carga juvenil extremadamente alta (RDD_JOVE = 3.508). Además, presenta la menor carga por vejez (RDD_VEJEZ = -1.109), así como una baja relación de apoyo a los padres (RA_PADRES = -1.076). Sin embargo, destaca por una elevada relación de apoyo potencial (RA_POTENCIAL = 2.765), lo cual refleja una amplia base de población en edad productiva.</p>
+</section>
+<section id="clúster-5" class="level3">
+<h3 class="anchored" data-anchor-id="clúster-5">Clúster 5</h3>
+<p>Este perfil demográfico se caracteriza por una muy baja carga juvenil (RDD_JOVE = -1.080) y una muy alta carga por vejez (RDD_VEJEZ = 2.937), así como una elevada relación de apoyo a los padres (RA_PADRES = 2.815). A ello se suma una muy baja relación de apoyo potencial (RA_POTENCIAL = -1.449), lo que evidencia una limitada disponibilidad de población en edad laboral para sostener a una población envejecida.</p>
+</section>
+<section id="tabla-2.-centroides" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-2.-centroides">Tabla 2. Centroides</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Clúster</th>
+<th style="text-align: right;">RDD_JOVE</th>
+<th style="text-align: right;">RDD_VEJEZ</th>
+<th style="text-align: right;">RA_POTENCIAL</th>
+<th style="text-align: right;">RA_PADRES</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">-0.603</td>
+<td style="text-align: right;">0.715</td>
+<td style="text-align: right;">-0.854</td>
+<td style="text-align: right;">0.663</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">0.674</td>
+<td style="text-align: right;">-0.845</td>
+<td style="text-align: right;">1.122</td>
+<td style="text-align: right;">-0.814</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: right;">-0.066</td>
+<td style="text-align: right;">-0.267</td>
+<td style="text-align: right;">-0.075</td>
+<td style="text-align: right;">-0.242</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: right;">3.508</td>
+<td style="text-align: right;">-1.109</td>
+<td style="text-align: right;">2.765</td>
+<td style="text-align: right;">-1.076</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: right;">-1.080</td>
+<td style="text-align: right;">2.937</td>
+<td style="text-align: right;">-1.449</td>
+<td style="text-align: right;">2.815</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fuente:</strong> MIMP – Dirección de Población.</p>
+<p>A continuación, se detallan las particularidades de los perfiles demográficos según las variables de dependencia analizadas.</p>
+</section>
+<section id="tabla-3.-promedios-de-las-variables-de-dependencia-demográfica-por-clúster" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-3.-promedios-de-las-variables-de-dependencia-demográfica-por-clúster">Tabla 3. Promedios de las variables de dependencia demográfica por clúster</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Clúster</th>
+<th>Perfil demográfico</th>
+<th style="text-align: right;">Cantidad de distritos</th>
+<th style="text-align: right;">RDD_JOVE</th>
+<th style="text-align: right;">RDD_VEJEZ</th>
+<th style="text-align: right;">RA_POTENCIAL</th>
+<th style="text-align: right;">RA_PADRES</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Moderada carga por vejez</td>
+<td style="text-align: right;">456</td>
+<td style="text-align: right;">29.3</td>
+<td style="text-align: right;">24.4</td>
+<td style="text-align: right;">4.23</td>
+<td style="text-align: right;">25.4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Moderada carga por juventud, con población activa</td>
+<td style="text-align: right;">435</td>
+<td style="text-align: right;">44.9</td>
+<td style="text-align: right;">9.74</td>
+<td style="text-align: right;">10.6</td>
+<td style="text-align: right;">10.6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Dependencia moderada, equilibrado</td>
+<td style="text-align: right;">848</td>
+<td style="text-align: right;">35.9</td>
+<td style="text-align: right;">15.2</td>
+<td style="text-align: right;">6.75</td>
+<td style="text-align: right;">16.3</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Muy alta carga por juventud, fuerte población activa</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">79.5</td>
+<td style="text-align: right;">7.27</td>
+<td style="text-align: right;">15.9</td>
+<td style="text-align: right;">7.95</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Muy alta vejez con débil soporte</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">23.5</td>
+<td style="text-align: right;">45.2</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: right;">47.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fuente:</strong> MIMP – Dirección de Población.</p>
+</section>
+<section id="tabla-4.-intervalos-de-las-variables-de-dependencia-demográfica-por-clúster" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-4.-intervalos-de-las-variables-de-dependencia-demográfica-por-clúster">Tabla 4. Intervalos de las variables de dependencia demográfica por clúster</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Clúster</th>
+<th>Perfil demográfico</th>
+<th>RDD_JOVE [5.08 - 154.0]</th>
+<th>RDD_VEJEZ [3.00 - 84.8]</th>
+<th>RA_POTENCIAL [1.18 - 33.4]</th>
+<th>RA_PADRES [0.00 - 79.0]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Dependencia moderada, equilibrado</td>
+<td>[14.1 - 58.9]</td>
+<td>[9.63 - 25.4]</td>
+<td>[3.94 - 10.4]</td>
+<td>[5.95 - 30.3]</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Moderada carga por juventud, con población activa</td>
+<td>[24.5 - 71.2]</td>
+<td>[3.89 - 14.9]</td>
+<td>[6.71 - 25.7]</td>
+<td>[0.00 - 20.7]</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Moderada carga por vejez</td>
+<td>[5.08 - 58.6]</td>
+<td>[17.0 - 39.8]</td>
+<td>[2.51 - 5.89]</td>
+<td>[12.1 - 44.9]</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Muy alta carga por juventud, fuerte población activa</td>
+<td>[45.8 - 154.0]</td>
+<td>[3.00 - 26.8]</td>
+<td>[3.73 - 33.4]</td>
+<td>[2.17 - 29.9]</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Muy alta vejez con débil soporte</td>
+<td>[9.46 - 47.4]</td>
+<td>[29.3 - 84.8]</td>
+<td>[1.18 - 3.42]</td>
+<td>[25.7 - 79.0]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fuente:</strong> MIMP – Dirección de Población.</p>
+</section>
+</section>
+<section id="conclusiones-y-recomendaciones" class="level1">
+<h1>9. Conclusiones y recomendaciones</h1>
+<ul>
+<li><p>El análisis demográfico realizado mediante el método <em>K-means</em>, utilizando variables asociadas a la dependencia demográfica (dependencia juvenil, dependencia por vejez y apoyo intergeneracional), permitió identificar perfiles distritales diferenciados según su carga demográfica y estructura poblacional.</p></li>
+<li><p>Los resultados evidencian una importante heterogeneidad en la presión demográfica ejercida sobre la población en edad productiva. Mientras algunos distritos enfrentan una elevada carga de dependencia juvenil, otros presentan una alta carga asociada al envejecimiento poblacional, acompañada de una limitada capacidad de soporte por parte de la población en edad laboral.</p></li>
+<li><p>Los perfiles identificados facilitan la caracterización territorial de las necesidades demográficas y sociales, contribuyendo a una mejor focalización de intervenciones en ámbitos como educación, salud, cuidados y protección social. Asimismo, constituyen una herramienta útil para la planificación territorial y el diseño de políticas públicas diferenciadas.</p></li>
+<li><p>Los resultados sugieren la necesidad de complementar el análisis tradicional de dependencia demográfica con enfoques que incorporen la condición de actividad económica de la población (Manzano y Velázquez, 2020). Ello se debe a que no todas las personas entre 15 y 64 años participan efectivamente en el mercado laboral, ni todas las personas de 65 años y más se encuentran fuera de la actividad económica.</p></li>
+<li><p>Finalmente, el análisis no incorpora variables relacionadas con la provisión y demanda de cuidados, ni considera explícitamente las dinámicas asociadas a la transición demográfica. Por ello, futuras investigaciones podrían integrar estas dimensiones con el fin de obtener una comprensión más completa de los desafíos demográficos que enfrentan los distritos del país.</p></li>
+</ul>
+</section>
+<section id="referencias-bibliográficas" class="level1">
+<h1>10. Referencias bibliográficas</h1>
+<p>James, G., Witten, D., Hastie, T., &amp; Tibshirani, R. (2017). <em>An introduction to statistical learning with applications in R</em>. Springer. https://www.stat.berkeley.edu/~rabbee/s154/ISLR_First_Printing.pdf</p>
+<p>Hartigan, J. A., &amp; Wong, M. A. (1979). Algorithm AS 136: A K-means clustering algorithm. <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em>, <em>28</em>(1), 100–108. https://www.jstor.org/stable/2346830</p>
+<p>Manzano, F. A., &amp; Velázquez, G. A. (2020). Propuesta de índice de dependencia económica para áreas menores. Su aplicación a la Región Metropolitana de Buenos Aires, Argentina (2010). <em>Cadernos Metrópole</em>. https://doi.org/10.1590/2236-9996.2020-4713</p>
+<p>Medium. (2019). <em>Get the optimal K in K-means clustering</em>. Recuperado de https://medium.com/towards-artificial-intelligence/get-the-optimal-k-in-k-means-clustering-d45b5b8a4315</p>
+<p>Ministerio de Salud del Perú (MINSA). (2025). <em>Repositorio Único Nacional de Información en Salud (REUNIS), tabla de indicadores distritales</em> <a href="#base-de-datos">Base de datos</a>. https://www.minsa.gob.pe/reunis/?op=1&amp;niv=5&amp;tbl=1</p>
+<p>Prieto Rosas, V., &amp; Robello, M. (Coords.). (2023). <em>Manual de demografía</em>. Universidad de la República, Facultad de Ciencias Sociales, Programa de Población. https://manualdemografia.cienciassociales.edu.uy/</p>
+<section id="paquetes-de-r" class="level2">
+<h2 class="anchored" data-anchor-id="paquetes-de-r">Paquetes de R</h2>
+<p>Kassambara, A., &amp; Mundt, F. (2020). <em>factoextra: Extract and visualize the results of multivariate data analyses</em> (Version 1.0.7) [Paquete de R]. CRAN. http://www.sthda.com/english/rpkgs/factoextra</p>
+<p>Kuethe, S. (2023). <em>deckgl: An R interface to ‘deck.gl’</em> (Version 0.3.0) [Paquete de R]. CRAN. https://github.com/crazycapivara/deckgl/ ; https://crazycapivara.github.io/deckgl/</p>
+<p>Kuhn, M., &amp; Wickham, H. (2025). <em>tidymodels: Easily install and load the ‘Tidymodels’ packages</em> (Version 1.3.0) [Paquete de R]. CRAN. https://tidymodels.tidymodels.org</p>
+<p>Robinson, D., Hayes, A., &amp; Couch, S. (2025). <em>broom: Convert statistical objects into tidy tibbles</em> (Version 1.0.9) [Paquete de R]. CRAN. https://broom.tidymodels.org/</p>
+<p>Schauberger, P., &amp; Walker, A. (2025). <em>openxlsx: Read, write and edit xlsx files</em> (Version 4.2.8) [Paquete de R]. CRAN. https://ycphs.github.io/openxlsx/</p>
+<p>Wickham, H. (2023). <em>tidyverse: Easily install and load the ‘Tidyverse’</em> (Version 2.0.0) [Paquete de R]. CRAN. https://tidyverse.tidyverse.org</p>
+</section>
 </section>
 
 </main>
