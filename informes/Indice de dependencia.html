@@ -107,21 +107,21 @@ window.Quarto = {
 
 
 <section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<h2 class="anchored" data-anchor-id="introducción">1. Introducción</h2>
 <p>La <strong>Dirección de Población</strong> de la <strong>Dirección General de Población, Desarrollo y Voluntariado (DGPDV)</strong>, del <strong>Viceministerio de Poblaciones Vulnerables (VMPV)</strong> del <strong>Ministerio de la Mujer y Poblaciones Vulnerables (MIMP)</strong>, ha iniciado un proceso sistemático de análisis y construcción de indicadores estratégicos vinculados a la dinámica demográfica y a la situación de las poblaciones vulnerables en el país. Esta iniciativa se enmarca en el fortalecimiento de la plataforma web <strong>InfoPoblación</strong>, concebida como un espacio de difusión de información estadística accesible, confiable y pertinente para la formulación de políticas públicas y la toma de decisiones basadas en evidencia a nivel regional y subnacional.</p>
 <p>La construcción de estos <strong>perfiles demográficos a nivel distrital</strong> responde a los objetivos de la <em>Línea de trabajo 3: Gestión del conocimiento poblacional</em>, que busca generar conocimiento a través de estudios especializados y difundirlo en formatos estratégicos y accesibles.</p>
 <p>Esta acción se complementa con la <em>Línea de trabajo 1: Política Nacional de Población</em>, al brindar insumos que faciliten la implementación de los Programas Regionales de Población, promoviendo una adecuada planificación territorial basada en la estructura por edades. Asimismo, contribuye a la <em>Línea de trabajo 2: Seguimiento a compromisos internacionales y nacionales</em>, al fortalecer el monitoreo del cumplimiento del <strong>Programa de Acción de la CIPD</strong> y del <strong>Consenso de Montevideo sobre Población y Desarrollo</strong>.</p>
 <p>En este marco, se agregan estos perfiles demográficos distritales según <strong>dependencia demográfica</strong> en InfoPoblación, permitiendo visualizar de manera sintética la presión demográfica sobre la población en edad laboral. Esta herramienta facilita la identificación de territorios con mayores niveles de dependencia, orientando políticas públicas más focalizadas.</p>
 </section>
 <section id="construcción-de-perfile-distritales-según-indicadores-de-dependencia-demográfica" class="level2">
-<h2 class="anchored" data-anchor-id="construcción-de-perfile-distritales-según-indicadores-de-dependencia-demográfica">Construcción de perfile distritales según indicadores de dependencia demográfica</h2>
+<h2 class="anchored" data-anchor-id="construcción-de-perfile-distritales-según-indicadores-de-dependencia-demográfica">2. Construcción de perfile distritales según indicadores de dependencia demográfica</h2>
 <p>a razón de dependencia demográfica es un indicador comúnmente utilizado para medir la presión que ejerce la población dependiente (menores de 15 años, y las personas de 65 años y más) sobre la población en edad productiva (personas de 15 a 64 años). Sin embargo, este indicador presenta limitaciones importantes al momento de evaluar la carga real de dependencia, dado que solo considera dos grandes grupos etarios y no permite distinguir los subgrupos que los conforman, los cuales tienen características específicas.</p>
 <p>Por esta razón, para construir perfiles demográficos distritales más precisos sobre la dependencia demográfica, es necesario ir más allá de la relación tradicional de dependencia; y considerar variables que reflejen la dinámica de distintos grupos poblacionales, tales como las personas de 0 a 14 años, de 50 a 64 años, de 65 años y más, y de 80 años y más. En este contexto, se propone la creación de perfiles demográficos basados en indicadores que toman en cuenta estos grupos etarios, y aportan información sobre el proceso de envejecimiento y la carga de dependencia: la relación de dependencia juvenil, la relación de dependencia por vejez, la relación de apoyo potencial y la relación de apoyo a los padres.</p>
 <p>Estos indicadores no solo cuantifican la presión demográfica sobre los grupos en edad productiva, sino que también evidencian las necesidades específicas en términos de educación, salud, protección social y cuidados familiares. Por ejemplo, una alta relación de dependencia juvenil señala la necesidad de fortalecer servicios como educación y salud materno-infantil, mientras que una elevada relación de dependencia por vejez y una baja relación de apoyo potencial alertan sobre el aumento de la demanda en servicios geriátricos, pensiones, cuidados sociales y una sobrecarga alta sobre la población en edad de trabajar (15 a 64 años). Además, la relación de apoyo a los padres permite visibilizar el papel crucial de los adultos de 50 a 64 años como cuidadores principales, orientando la formulación de políticas de apoyo y bienestar social.</p>
 <p>En conjunto, estas variables facilitan la identificación de patrones demográficos y sociales diferenciados en cada distrito, permitiendo una planificación territorial más eficiente y la focalización adecuada de recursos para atender las diversas realidades demográficas.</p>
 </section>
 <section id="descripción-de-variables" class="level2">
-<h2 class="anchored" data-anchor-id="descripción-de-variables">Descripción de variables</h2>
+<h2 class="anchored" data-anchor-id="descripción-de-variables">3. Descripción de variables</h2>
 <ul>
 <li><strong>Relación de dependencia juvenil</strong>: Es el cociente entre el número de personas de 0 a 14 años de edad y las personas de 15 a 64 años. Este indicador mide cuántas personas menores de 15 años hay por cada 100 personas entre 15 y 64 años.</li>
 </ul>
@@ -169,9 +169,9 @@ RA_{PADRES_i} = \frac{P_{80+_i}}{P_{50-64_i}} \times 100
 \]</span></p>
 </section>
 <section id="metodología" class="level2">
-<h2 class="anchored" data-anchor-id="metodología">Metodología</h2>
+<h2 class="anchored" data-anchor-id="metodología">4. Metodología</h2>
 <section id="método-k-means" class="level3">
-<h3 class="anchored" data-anchor-id="método-k-means">Método k-means</h3>
+<h3 class="anchored" data-anchor-id="método-k-means">4.1 Método k-means</h3>
 <p>El método de K-means, también conocido como el algoritmo de clustering de K-means, es un método de agrupación no jerárquico, el número de agrupaciones o clústeres (k) es previamente determinado, que asigna a cada observación en uno de los k clústeres (James, Witten, Hastie y Tibshirani, 2017, pp.&nbsp;386). Las observaciones dentro de cada clúster son lo más similares posibles entre sí. Este método agrupará los distritos en k clústeres según las variables de dependencia (relación de dependencia juvenil y por vejez, y relación de apoyo potencial y a los padres). Matemáticamente, es un proceso iterativo que busca encontrar k clusters que minimice la varianza en cada cluster (Hartigan y Wong, 1979). Es decir, busca minimizar la suma de las distancias cuadráticas entre los puntos de cada observación y sus centroides de clúster.</p>
 <p>Primero, se calcula la distancia euclidiana de cada punto <span class="math inline">\((x_i)\)</span> a cada centroide <span class="math inline">\((u_k):\)</span> <span class="math display">\[
 d(x_i, \mu_k) = \sqrt{\sum_{j=1}^{d}(x_{ij} - \mu_{kj})^2}
@@ -201,7 +201,7 @@ J = \sum_{k=1}^{K} \sum_{i \in C_k} \left\| x_i - \mu_k \right\|^2
 \]</span></p>
 </section>
 <section id="método-del-codo-elbow-method" class="level3">
-<h3 class="anchored" data-anchor-id="método-del-codo-elbow-method">Método del codo (<em>elbow method</em>)</h3>
+<h3 class="anchored" data-anchor-id="método-del-codo-elbow-method">4.2 Método del codo (<em>elbow method</em>)</h3>
 <p>El método del codo es un método directo que determina el número óptimo de clústeres, <span class="math inline">\(k^*\)</span>, considerando que debe alcanzarse una baja variación total o inercia dentro de los clústeres, con el objetivo de encontrar un equilibrio entre la inercia y la cantidad de clústeres (Medium, 2019). Es decir, busca el punto donde añadir más clústeres no mejora significativamente la reducción de la suma de las distancias cuadradas intra-clúster. Para ello, primero se calcula la distorsión.</p>
 <p><span class="math display">\[
 \text{Distorsión} = \frac{\sum_{i=1}^{n_k} \left\| x_i - \mu_k \right\|^2}{n_k}
@@ -209,7 +209,7 @@ J = \sum_{k=1}^{K} \sum_{i \in C_k} \left\| x_i - \mu_k \right\|^2
 <p>La distorsión mide la compacidad de los clústeres: cuanto más baja sea la distorsión, los puntos estarán más próximos a sus centroides, lo que indica una mejor agrupación.</p>
 </section>
 <section id="método-gap-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="método-gap-statistics">Método Gap Statistics</h3>
+<h3 class="anchored" data-anchor-id="método-gap-statistics">4.3 Método Gap Statistics</h3>
 <p>El método <em>Gap Statistic</em> o método de brecha es una prueba estadística que compara la variabilidad interna de los clústeres observados con la variabilidad esperada en una distribución nula (sin estructura de agrupamiento) (Tibshirani, Walther y Hastie, 2001). El número óptimo de clústeres será aquel que maximice esta brecha, donde la estructura de los datos es más pronunciada y menos atribuible al azar. Esto indica que el agrupamiento observado es más significativo y no producto de fluctuaciones aleatorias.</p>
 <p>La estadística Gap se define como:</p>
 <p><span class="math display">\[
@@ -232,7 +232,7 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 </section>
 </section>
 <section id="base-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="base-de-datos">Base de datos</h2>
+<h2 class="anchored" data-anchor-id="base-de-datos">6. Base de datos</h2>
 <p>Se utilizó información poblacional proveniente del Repositorio Único Nacional de Información en Salud del Ministerio de Salud del Perú (MINSA) correspondiente al año 2025. La base de datos empleada contiene información de los 1891 distritos del país e incluye las siguientes variables:</p>
 <section id="tabla-1." class="level3">
 <h3 class="anchored" data-anchor-id="tabla-1.">Tabla 1.</h3>
@@ -284,7 +284,7 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 </section>
 </section>
 <section id="proceso-del-análisis-del-método-de-k-means-clustering" class="level2">
-<h2 class="anchored" data-anchor-id="proceso-del-análisis-del-método-de-k-means-clustering">Proceso del análisis del método de <em>K-means clustering</em></h2>
+<h2 class="anchored" data-anchor-id="proceso-del-análisis-del-método-de-k-means-clustering">7. Proceso del análisis del método de <em>K-means clustering</em></h2>
 <p>Para determinar el número óptimo de clústeres (<span class="math inline">\(k\)</span>), primero se realizó un análisis de componentes principales (<em>Principal Component Analysis</em> - PCA). En el Gráfico 1 se observa que la dimensión 1 explica el 74.4% de la variabilidad total, mientras que la dimensión 2 explica el 16.9%. En conjunto, ambas dimensiones explican el 91.3% de la variabilidad total de los datos.</p>
 <p>A partir de este análisis se identificaron cinco clústeres. Los clústeres 1 y 5 presentan una mayor dispersión, lo que indica una mayor heterogeneidad interna entre los distritos que los conforman. Por el contrario, los clústeres 2, 3 y 4 muestran una estructura más compacta, evidenciando una mayor similitud entre los distritos pertenecientes a cada grupo.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -310,7 +310,7 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 <p>Finalmente, se aplicó el método de <strong>K-means</strong> con (k = 5). El <strong>Gráfico 4</strong> muestra, a diferencia del <strong>Gráfico 1</strong>, una separación más clara entre los clústeres. Se observa que los clústeres 1, 2 y 3 presentan una mayor compacidad, mientras que los clústeres 4 y 5 exhiben una mayor dispersión, lo que sugiere una mayor heterogeneidad intra-clúster.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Grafico%204-01.png" class="img-fluid figure-img"></p>
+<p><img src="images/Grafico%204-06.png" class="img-fluid figure-img"></p>
 <figcaption>MIMP - Dirección de Población</figcaption>
 </figure>
 </div>
@@ -322,6 +322,11 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 <section id="resultados-perfiles-demográficos-distritales-según-dependencia-demográfica" class="level1">
 <h1>8. Resultados: perfiles demográficos distritales según dependencia demográfica</h1>
 <p>El análisis de clústeres mediante la metodología <em>K-means</em> permitió identificar cinco perfiles demográficos (clústeres) que agrupan a los 1891 distritos en función de sus características relacionadas con los indicadores de dependencia: relación de dependencia juvenil (RDD_JOVE), relación de dependencia por vejez (RDD_VEJEZ), relación de apoyo potencial (RA_POTENCIAL) y relación de apoyo a los padres (RA_PADRES). A continuación, se describen los principales resultados obtenidos para cada clúster.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/map_nive_dist_clus.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <section id="clúster-1" class="level3">
 <h3 class="anchored" data-anchor-id="clúster-1">Clúster 1</h3>
 <p>Este clúster agrupa distritos con baja carga juvenil (RDD_JOVE = -0.603) y una carga moderadamente alta por vejez (RDD_VEJEZ = 0.715). Asimismo, presenta una baja relación de apoyo potencial (RA_POTENCIAL = -0.854), indicando una menor cantidad de personas en edad laboral por cada adulto mayor. Además, registra una alta relación de apoyo a los padres (RA_PADRES = 0.663), lo que refleja una mayor presencia de personas de 80 años y más por cada adulto de entre 50 y 64 años.</p>
@@ -399,13 +404,13 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 <h3 class="anchored" data-anchor-id="tabla-3.-promedios-de-las-variables-de-dependencia-demográfica-por-clúster">Tabla 3. Promedios de las variables de dependencia demográfica por clúster</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 21%">
-<col style="width: 23%">
-<col style="width: 10%">
-<col style="width: 11%">
 <col style="width: 14%">
-<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -472,12 +477,12 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 <h3 class="anchored" data-anchor-id="tabla-4.-intervalos-de-las-variables-de-dependencia-demográfica-por-clúster">Tabla 4. Intervalos de las variables de dependencia demográfica por clúster</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
 <col style="width: 16%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 20%">
-<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -551,7 +556,7 @@ Gap(k)\geq Gap(k+1)-SE(k+1)
 <p>Hartigan, J. A., &amp; Wong, M. A. (1979). Algorithm AS 136: A K-means clustering algorithm. <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em>, <em>28</em>(1), 100–108. https://www.jstor.org/stable/2346830</p>
 <p>Manzano, F. A., &amp; Velázquez, G. A. (2020). Propuesta de índice de dependencia económica para áreas menores. Su aplicación a la Región Metropolitana de Buenos Aires, Argentina (2010). <em>Cadernos Metrópole</em>. https://doi.org/10.1590/2236-9996.2020-4713</p>
 <p>Medium. (2019). <em>Get the optimal K in K-means clustering</em>. Recuperado de https://medium.com/towards-artificial-intelligence/get-the-optimal-k-in-k-means-clustering-d45b5b8a4315</p>
-<p>Ministerio de Salud del Perú (MINSA). (2025). <em>Repositorio Único Nacional de Información en Salud (REUNIS), tabla de indicadores distritales</em> <a href="#base-de-datos">Base de datos</a>. https://www.minsa.gob.pe/reunis/?op=1&amp;niv=5&amp;tbl=1</p>
+<p>Ministerio de Salud del Perú (MINSA). (2025). <em>Repositorio Único Nacional de Información en Salud (REUNIS), tabla de indicadores distritales</em> [Base de datos]. https://www.minsa.gob.pe/reunis/?op=1&amp;niv=5&amp;tbl=1</p>
 <p>Prieto Rosas, V., &amp; Robello, M. (Coords.). (2023). <em>Manual de demografía</em>. Universidad de la República, Facultad de Ciencias Sociales, Programa de Población. https://manualdemografia.cienciassociales.edu.uy/</p>
 <section id="paquetes-de-r" class="level2">
 <h2 class="anchored" data-anchor-id="paquetes-de-r">Paquetes de R</h2>
